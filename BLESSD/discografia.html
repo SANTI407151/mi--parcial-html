@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Discografía - Mi Artista Favorito</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #222;
+            position: relative;
+        }
+            .video-bg {
+                position: fixed;
+                top: 0; left: 0; width: 100vw; height: 100vh;
+                object-fit: cover;
+                z-index: -1;
+                opacity: 0.25;
+            }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(255,255,255,0.22);
+            z-index: 0;
+        }
+        main, header, nav, .albumes, .album, .singles, footer {
+            position: relative;
+            z-index: 1;
+        }
+        header {
+            background: rgba(34,34,34,0.85);
+            padding: 38px 0 18px 0;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+        }
+        header h1 {
+            text-align: center;
+            color: #fff;
+            font-size: 2.7em;
+            letter-spacing: 2px;
+            margin: 0;
+            text-shadow: 2px 2px 8px #222;
+        }
+            h3, section h2, .album p, .album .desc, .album .year, .singles h4, .single {
+                color: #fff !important;
+                text-shadow: 1px 1px 8px #222;
+            }
+        nav {
+            text-align: center;
+            background-color: rgba(44,44,44,0.85);
+            padding: 14px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        nav a {
+            color: #fff;
+            margin: 0 18px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        nav a:hover {
+            color: #ff4081;
+        }
+        section h2 {
+            text-align: center;
+            color: #ff4081;
+            font-size: 2.2em;
+            margin-top: 38px;
+            letter-spacing: 1px;
+        }
+        h3 {
+            text-align: center;
+            color: #222;
+            font-size: 1.7em;
+            margin-top: 30px;
+            letter-spacing: 1px;
+        }
+        .albumes {
+            display: flex;
+            justify-content: center;
+            gap: 38px;
+            flex-wrap: wrap;
+            margin: 38px auto 38px auto;
+            max-width: 1200px;
+        }
+        .album {
+            background: rgba(255,255,255,0.96);
+            border-radius: 22px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+            padding: 22px 22px 16px 22px;
+            text-align: center;
+            width: 260px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            animation: fadeIn 1.2s;
+            position: relative;
+        }
+        .album:hover {
+            transform: scale(1.07);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.22);
+        }
+        .album img {
+            width: 200px;
+            border-radius: 14px;
+            box-shadow: 0 2px 14px rgba(0,0,0,0.13);
+            margin-bottom: 12px;
+        }
+        .album p {
+            font-size: 1.15em;
+            color: #222;
+            margin: 10px 0 0 0;
+        }
+        .album b {
+            color: #ff4081;
+        }
+        .album .fa-compact-disc {
+            color: #ff4081;
+            font-size: 1.4em;
+            margin-bottom: 8px;
+        }
+        .album .year {
+            color: #555;
+            font-size: 0.98em;
+        }
+        .album .desc {
+            color: #444;
+            font-size: 0.98em;
+            margin-top: 6px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .singles {
+            margin: 40px auto 0 auto;
+            max-width: 900px;
+            background: rgba(255,255,255,0.93);
+            border-radius: 18px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+            padding: 24px 32px;
+        }
+        .singles h4 {
+            color: #ff4081;
+            font-size: 1.3em;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+        .single-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+        }
+        .single {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 12px 18px;
+            min-width: 180px;
+            text-align: center;
+            font-size: 1.08em;
+            transition: box-shadow 0.2s;
+        }
+        .single:hover {
+            box-shadow: 0 6px 18px rgba(0,0,0,0.13);
+        }
+        .single i {
+            color: #ff4081;
+            margin-right: 8px;
+        }
+        footer {
+            background-color: rgba(44,44,44,0.85);
+            color: #fff;
+            text-align: center;
+            padding: 22px;
+            margin-top: 50px;
+            font-size: 1.15em;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.14);
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <video class="video-bg" src="multimedia/UNA NOCHE DE LOCURA  BLESSD   ( TRINIDAD BENDITA ) - BLESSD EL BENDITO 💙 (720p, h264).mp4" autoplay loop muted playsinline></video>
+        <h1>MI ARTISTA FAVORITO</h1>
+    </header>
+
+    <nav>
+        <a href="https://blessd.co/" target="_blank"><i class="fa-solid fa-globe"></i> Web Oficial</a>
+        <a href="https://www.youtube.com/channel/UCZ8OZzchKaW2WlS3sCcfhvA" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="discografia.html"><i class="fa-solid fa-music"></i> Discografía</a>
+        <a href="https://upload.wikimedia.org/wikipedia/commons/f/f7/Blessd.jpg" target="_blank"><i class="fa-solid fa-image"></i> Imagen</a>
+        <a href="doc/blessd.pdf" target="_blank"><i class="fa-solid fa-newspaper"></i> Noticia</a>
+        <a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a>
+    </nav>
+
+    <section>
+        <article>
+            <div>
+                <h2>Blessd</h2>
+            </div>
+        </article>
+    </section>
+
+
+    <h3><i class="fa-solid fa-compact-disc"></i> DISCOGRAFÍA</h3>
+    <div class="albumes" style="display:flex;flex-wrap:wrap;justify-content:center;gap:48px;">
+        <div class="album" style="background:#111;border-radius:18px;box-shadow:0 4px 18px rgba(0,0,0,0.13);padding:24px 18px 18px 18px;width:260px;margin-bottom:24px;">
+            <img src="img/trinidad-portada.jpg" alt="Trinidad Bendita" style="width:200px;border-radius:12px;box-shadow:0 2px 14px rgba(0,0,0,0.13);margin-bottom:16px;">
+            <div style="text-align:center;margin-bottom:10px;font-size:1.25em;color:#fff;font-weight:bold;text-shadow:2px 2px 8px #222;letter-spacing:1px;">TRINIDAD BENDITA</div>
+            <div style="display:flex;justify-content:center;gap:18px;">
+                <a href="https://open.spotify.com/intl-es/album/3MPeQFXj8sDLFf0jWkClyT" target="_blank" title="Spotify"><i class="fa-brands fa-spotify" style="color:#1DB954;font-size:1.7em;"></i></a>
+                <a href="https://music.apple.com/us/album/trinidad-bendita/1817729931/" target="_blank" title="Apple Music"><i class="fa-brands fa-apple" style="color:#fff;font-size:1.7em;"></i></a>
+                <a href="https://www.youtube.com/playlist?list=OLAK5uy_m-W-J6-9P7Pomf1XjDSQU4YfT86oZLamg" target="_blank" title="YouTube"><i class="fa-brands fa-youtube" style="color:#FF0000;font-size:1.7em;"></i></a>
+                <a href="#" title="Otro"><i class="fa-solid fa-heart" style="color:#fff;font-size:1.7em;"></i></a>
+            </div>
+        </div>
+        <div class="album" style="background:#111;border-radius:18px;box-shadow:0 4px 18px rgba(0,0,0,0.13);padding:24px 18px 18px 18px;width:260px;margin-bottom:24px;">
+            <img src="img/deluxury-portada.jpg" alt="Blessdeluxury" style="width:200px;border-radius:12px;box-shadow:0 2px 14px rgba(0,0,0,0.13);margin-bottom:16px;">
+            <div style="text-align:center;margin-bottom:10px;font-size:1.25em;color:#fff;font-weight:bold;text-shadow:2px 2px 8px #222;letter-spacing:1px;">BLESSDELUXURY</div>
+            <div style="display:flex;justify-content:center;gap:18px;">
+                <a href="https://open.spotify.com/" target="_blank" title="Spotify"><i class="fa-brands fa-spotify" style="color:#1DB954;font-size:1.7em;"></i></a>
+                <a href="https://music.apple.com/" target="_blank" title="Apple Music"><i class="fa-brands fa-apple" style="color:#fff;font-size:1.7em;"></i></a>
+                <a href="https://www.youtube.com/" target="_blank" title="YouTube"><i class="fa-brands fa-youtube" style="color:#FF0000;font-size:1.7em;"></i></a>
+                <a href="#" title="Otro"><i class="fa-solid fa-heart" style="color:#fff;font-size:1.7em;"></i></a>
+            </div>
+        </div>
+        <div class="album" style="background:#111;border-radius:18px;box-shadow:0 4px 18px rgba(0,0,0,0.13);padding:24px 18px 18px 18px;width:260px;margin-bottom:24px;">
+            <img src="img/sisabe-portada.jpg" alt="Si Sabe" style="width:200px;border-radius:12px;box-shadow:0 2px 14px rgba(0,0,0,0.13);margin-bottom:16px;">
+            <div style="text-align:center;margin-bottom:10px;font-size:1.25em;color:#fff;font-weight:bold;text-shadow:2px 2px 8px #222;letter-spacing:1px;">SI SABE</div>
+            <div style="display:flex;justify-content:center;gap:18px;">
+                <a href="https://open.spotify.com/" target="_blank" title="Spotify"><i class="fa-brands fa-spotify" style="color:#1DB954;font-size:1.7em;"></i></a>
+                <a href="https://music.apple.com/" target="_blank" title="Apple Music"><i class="fa-brands fa-apple" style="color:#fff;font-size:1.7em;"></i></a>
+                <a href="https://www.youtube.com/" target="_blank" title="YouTube"><i class="fa-brands fa-youtube" style="color:#FF0000;font-size:1.7em;"></i></a>
+                <a href="#" title="Otro"><i class="fa-solid fa-heart" style="color:#fff;font-size:1.7em;"></i></a>
+            </div>
+        </div>
+        <div class="album" style="background:#111;border-radius:18px;box-shadow:0 4px 18px rgba(0,0,0,0.13);padding:24px 18px 18px 18px;width:260px;margin-bottom:24px;">
+            <img src="img/siempreblessd-portada.jpg" alt="Bendecido" style="width:200px;border-radius:12px;box-shadow:0 2px 14px rgba(0,0,0,0.13);margin-bottom:16px;">
+            <div style="text-align:center;margin-bottom:10px;font-size:1.25em;color:#fff;font-weight:bold;text-shadow:2px 2px 8px #222;letter-spacing:1px;">BENDECIDO</div>
+            <div style="display:flex;justify-content:center;gap:18px;">
+                <a href="https://open.spotify.com/" target="_blank" title="Spotify"><i class="fa-brands fa-spotify" style="color:#1DB954;font-size:1.7em;"></i></a>
+                <a href="https://music.apple.com/" target="_blank" title="Apple Music"><i class="fa-brands fa-apple" style="color:#fff;font-size:1.7em;"></i></a>
+                <a href="https://www.youtube.com/" target="_blank" title="YouTube"><i class="fa-brands fa-youtube" style="color:#FF0000;font-size:1.7em;"></i></a>
+                <a href="#" title="Otro"><i class="fa-solid fa-heart" style="color:#fff;font-size:1.7em;"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h6>TODOS LOS DERECHOS RESERVADOS - Santiago</h6>
+    </footer>
+</body>
+</html>

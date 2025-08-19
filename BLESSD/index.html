@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Artista Favorito</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f0f8ff 60%, #e6e6fa 100%);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+               background: url('img/pl.jpeg') no-repeat center center fixed;
+               background-size: cover;
+        }
+        header {
+            background: #222;
+            padding: 30px 0 10px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        header h1 {
+            text-align: center;
+            color: #fff;
+            font-size: 2.8em;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+        nav {
+            text-align: center;
+            background-color: #222;
+            padding: 12px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        nav a {
+            color: #fff;
+            margin: 0 18px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        nav a:hover {
+            color: #ff4081;
+        }
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+            margin: 32px auto 0 auto;
+            max-width: 900px;
+        }
+        .galeria img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            transition: transform 0.2s;
+        }
+        .galeria img:hover {
+            transform: scale(1.07);
+        }
+        .video {
+            display: flex;
+            justify-content: center;
+            margin: 38px 0 0 0;
+        }
+        .hero {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            padding: 40px 0 10px 0;
+        }
+        .hero-media {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+        }
+        .hero-media img, .hero-media video {
+            border-radius: 20px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            width: 320px;
+            max-width: 90vw;
+        }
+        .hero-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .hero-info h2 {
+            color: #222;
+            font-size: 2em;
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+        .hero-info span {
+            color: #555;
+            font-size: 1.1em;
+        }
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                gap: 18px;
+            }
+            .hero-media img, .hero-media video {
+                width: 95vw;
+                max-width: 320px;
+            }
+            .hero-info {
+                align-items: center;
+            }
+        }
+        .bio {
+            width: 90%;
+            max-width: 700px;
+            margin: 30px auto 0 auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            padding: 28px 32px;
+            text-align: justify;
+            font-size: 1.1em;
+        }
+        .bio strong {
+            color: #ff4081;
+        }
+        .bio b {
+            color: #222;
+        }
+        footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 16px;
+            margin-top: 40px;
+            font-size: 1em;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MI ARTISTA FAVORITO</h1>
+    </header>
+
+    <nav>
+        <a href="https://blessd.co/" target="_blank"><i class="fa-solid fa-globe"></i> Web Oficial</a>
+        <a href="https://www.youtube.com/channel/UCb164jMdHd94O34bASFbI3Q" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="discografia.html"><i class="fa-solid fa-music"></i> Discografía</a>
+        <a href="img/images.jpeg" target="_blank"><i class="fa-solid fa-image"></i> Imagen</a>
+        <a href="doc/blessd.pdf" target="_blank"><i class="fa-solid fa-newspaper"></i> Noticia</a>
+        <a href="https://www.instagram.com/blessd/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-media">
+            <img src="img/lsa.png" alt="Blessd 1">
+            <video width="320" height="180" controls poster="img/images.jpeg">
+                <source src="multimedia/blessd.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+        </div>
+        <div class="hero-info">
+            <h2><i class="fa-solid fa-star" style="color:#ff4081;"></i> Blessd</h2>
+            <span><i class="fa-solid fa-microphone"></i> Cantante y compositor colombiano</span>
+        </div>
+    </div>
+
+    <div class="bio">
+        <p><strong>Blessd</strong>, cuyo nombre real es <em>Stiven Mesa Londoño</em>, es un cantante y compositor colombiano de música urbana, nacido en Medellín. Su estilo mezcla <u>reguetón, trap, rap y música popular</u>, logrando un reconocimiento internacional en muy poco tiempo.</p>
+        <p>Se ha consolidado como uno de los artistas más prometedores de la nueva generación, con éxitos como <b>"Medallo"</b>, <b>"Imposible"</b> y <b>"Quien TV"</b>. Su carrera es un reflejo del talento emergente de Colombia en la música urbana.</p>
+        <p style="margin-top:18px;color:#444;">¡Descubre más sobre Blessd en sus redes y disfruta su música!</p>
+    </div>
+
+    <!-- Galería de imágenes -->
+    <section>
+        <h2 style="text-align:center;color:#080808;margin-top:40px;"><i class="fa-solid fa-images"></i> Galería</h2>
+        <div class="galeria">
+            <img src="img/images.jpeg" alt="Blessd 1">
+            <img src="img/blessd.png" alt="Blessd 2">
+            <img src="img/bes.jpeg" alt="Blessd 3">
+            <img src="img/las.jpg" alt="Blessd 4">
+        </div>
+    </section>
+
+   
+
+    <footer>
+        <h6>TODOS LOS DERECHOS RESERVADOS - Santiago</h6>
+    </footer>
+</body>
+</html>
